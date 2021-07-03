@@ -1,0 +1,47 @@
+
+include badges
+
+mixin projects(projects)
+  table.table.sortable.table-striped.projects-table
+    thead
+      tr
+        th.sorttable_sorted
+          | Project
+          //- marker means "sorted by default"; should be in .js, but I'm lazy
+          span#sorttable_sortfwdind &nbsp;&#x25BE;
+        th Homepage
+        th Maintainer
+        th.sorttable_nosort.empty(colspan='6')
+    tbody
+      for project in projects
+        +project-row(project)
+
+mixin project-row(project)
+  tr
+    td: +project(project)
+    td: +homepage(project)
+    td: +maintainer(project.maintainer)
+    td: +badge-github-stars(project.repo)
+    td: +badge-downloads(project.npm)
+    td: +badge-npm(project.npm)
+    td: +bundle-size(project.npm)
+    td: +install-size(project.npm)
+    td: +badge-travis(project.repo)
+    td: +badge-coveralls(project.repo)
+    td: +badge-circleci(project.repo)
+    td: +badge-codecov(project.repo)
+    td: +badge-david(project.repo)
+    td: +badge-david-dev(project.repo)
+    td: +badge-github-last-commit(project.repo)
+    td: +badge-github-open-issues(project.repo)
+    td: +badge-github-open-prs(project.repo)
+
+mixin project(project)
+  a(title=project.description, href='https://github.com/' + project.repo)= project.name
+
+mixin homepage(project)
+  a(title=project.description, href='http://react-component.github.io/' + project.name.replace(/^rc-/,''))= project.name
+
+mixin maintainer(person)
+  if typeof(person) === 'object' && person != null
+    a(href='https://github.com/' + person.github)= person.name

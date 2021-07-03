@@ -1,0 +1,39 @@
+doctype
+html.no-js
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    if (typeof(title) !== 'undefined')
+      title= title
+    else
+      title= name
+    meta(name='description', content=description || '')
+    meta(name='keywords', content=keywords || '')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(href='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css', rel='stylesheet')
+    style
+      include:uglify-css style.css
+    script(src='static/sorttable.js')
+  body
+    .navbar(role='navigation')
+      .navbar-header
+        a.navbar-brand.logo(href='https://github.com/' + name)= title
+        .navbar-brand.manifesto
+          span= description
+          a(href='https://ant.design')  Ant Design
+
+    block body
+    script(src='https://www.googletagmanager.com/gtag/js?id=UA-72788897-8', async)
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-72788897-8');
+    footer
+      //- please, don't remove this unless you have a good reason to
+      | This web page was created using
+      | #{' '}
+      a(href='https://github.com/repo-utils/badgeboard') repo-utils/badgeboard
+      | #{' '}
+      | generator. You can use it to create a similar badgeboard for your
+      | stuff.

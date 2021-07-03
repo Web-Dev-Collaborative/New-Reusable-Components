@@ -1,0 +1,20 @@
+language: node_js
+notifications:
+  email:
+  - eward.song@gmail.com
+node_js:
+- 0.11
+before_script:
+- npm start &
+- npm install mocha-phantomjs -g
+- phantomjs --version
+script:
+- npm test
+- npm run-script browser-test
+- npm run-script browser-test-cover
+- npm run saucelabs
+
+env:
+  global:
+    - secure: Xwn7ZpjbypundIe7TFL1EKycD4aos677zyclXhmu0kQCz+FkToptAIyarFyYMOZV8Ze2ik76ySCDmXmgJo2po3rpZLK8uUGynlMQGzBO6sAmw9CJfl7hKwWQojkXYc7Z6gIWCslsOC0G79MzGzCmqnZYD+CrsmMotwX8Kww2wrU=
+    - secure: N4LZNxaf+beJP8XXc66OgooK6ecPRXu0Pfk1WcnjRx4h8A5WDhzeBXaSBiLScU2XybSUP6D4fTw4ZZJIx3q3bcNxX899xNTML1deul383GJu5d4o8WxFZlma1rUsIfDsH/P0lU4TJw6yyyU5YGnRKdgy5OOSUSvmRw1qQDCr0aU=
