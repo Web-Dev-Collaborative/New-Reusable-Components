@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
-module.exports = function(size) {
-  var units = ['TB', 'GB', 'MB', 'KB', 'b'];
+module.exports = function (size) {
+  var units = ["TB", "GB", "MB", "KB", "b"];
   var filesizeBase = 1024;
   var selectedSize, selectedUnit;
   for (var i = 0, len = units.length; i < len; i++) {

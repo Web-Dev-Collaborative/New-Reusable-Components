@@ -1,20 +1,18 @@
-'use strict';
-
+"use strict";
 
 // cao not run in phantomjs, fail!
-var CSSTransitionGroup = require('../');
-var React = require('react/addons');
+var CSSTransitionGroup = require("../");
+var React = require("react/addons");
 var TestUtils = React.addons.TestUtils;
 var Simulate = TestUtils.Simulate;
-var expect = require('expect.js');
-require('./index.spec.css');
+var expect = require("expect.js");
+require("./index.spec.css");
 
 var Todo = React.createClass({
   getDefaultProps: function () {
     return {
-      end: function () {
-      }
-    }
+      end: function () {},
+    };
   },
 
   componentWillUnmount: function () {
@@ -23,36 +21,39 @@ var Todo = React.createClass({
 
   render: function () {
     var props = this.props;
-    return <div onClick={this.props.onClick} className="item">
-             {props.children}
-    </div>;
-  }
+    return (
+      <div onClick={this.props.onClick} className="item">
+        {props.children}
+      </div>
+    );
+  },
 });
 var TodoList = React.createClass({
   getInitialState: function () {
-    return {items: ['hello', 'world', 'click', 'me']};
+    return { items: ["hello", "world", "click", "me"] };
   },
 
   handleAdd: function (item) {
-    var newItems =
-      this.state.items.concat(item);
-    this.setState({items: newItems});
+    var newItems = this.state.items.concat(item);
+    this.setState({ items: newItems });
   },
 
   handleRemove: function (i) {
     var newItems = this.state.items;
     newItems.splice(i, 1);
-    this.setState({items: newItems});
+    this.setState({ items: newItems });
   },
 
   render: function () {
-    var items = this.state.items.map(function (item, i) {
-      return (
-        <Todo key={item} onClick={this.handleRemove.bind(this, i)}>
-          {item}
-        </Todo>
-      );
-    }.bind(this));
+    var items = this.state.items.map(
+      function (item, i) {
+        return (
+          <Todo key={item} onClick={this.handleRemove.bind(this, i)}>
+            {item}
+          </Todo>
+        );
+      }.bind(this)
+    );
     return (
       <div>
         <CSSTransitionGroup transitionName="example">
@@ -60,16 +61,16 @@ var TodoList = React.createClass({
         </CSSTransitionGroup>
       </div>
     );
-  }
+  },
 });
 
-describe('CSSTransitionGroup', function () {
+describe("CSSTransitionGroup", function () {
   var list;
-  var container = document.createElement('div');
+  var container = document.createElement("div");
   document.body.appendChild(container);
 
   beforeEach(function (done) {
-    React.render(<TodoList/>, container, function () {
+    React.render(<TodoList />, container, function () {
       list = this;
       done();
     });
@@ -79,54 +80,88 @@ describe('CSSTransitionGroup', function () {
     React.unmountComponentAtNode(container);
   });
 
-  it('create works', function () {
-    expect(TestUtils.scryRenderedDOMComponentsWithClass(list, 'item').length).to.be(4);
+  it("create works", function () {
+    expect(
+      TestUtils.scryRenderedDOMComponentsWithClass(list, "item").length
+    ).to.be(4);
   });
 
-  var ReactTransitionEvents = require('../src/ReactTransitionEvents');
+  var ReactTransitionEvents = require("../src/ReactTransitionEvents");
   if (!ReactTransitionEvents.endEvents.length) {
     return;
   }
 
-  it('transitionLeave works', function (done) {
+  it("transitionLeave works", function (done) {
     this.timeout(5999);
     list.handleRemove(0);
     setTimeout(function () {
-      expect(TestUtils.scryRenderedDOMComponentsWithClass(list, 'item').length).to.be(4);
+      expect(
+        TestUtils.scryRenderedDOMComponentsWithClass(list, "item").length
+      ).to.be(4);
       if (!window.callPhantom) {
-        expect(TestUtils.scryRenderedDOMComponentsWithClass(list, 'item')[0].getDOMNode().className)
-          .to.contain('example-leave');
-        expect(TestUtils.scryRenderedDOMComponentsWithClass(list, 'item')[0].getDOMNode().className)
-          .to.contain('example-leave-active');
+        expect(
+          TestUtils.scryRenderedDOMComponentsWithClass(
+            list,
+            "item"
+          )[0].getDOMNode().className
+        ).to.contain("example-leave");
+        expect(
+          TestUtils.scryRenderedDOMComponentsWithClass(
+            list,
+            "item"
+          )[0].getDOMNode().className
+        ).to.contain("example-leave-active");
       }
     }, 100);
     setTimeout(function () {
       if (!window.callPhantom) {
-        expect(TestUtils.scryRenderedDOMComponentsWithClass(list, 'item').length).to.be(3);
+        expect(
+          TestUtils.scryRenderedDOMComponentsWithClass(list, "item").length
+        ).to.be(3);
       }
       done();
     }, 1400);
   });
 
-  it('transitionLeave works', function (done) {
+  it("transitionLeave works", function (done) {
     this.timeout(5999);
     list.handleAdd(Date.now());
     setTimeout(function () {
-      expect(TestUtils.scryRenderedDOMComponentsWithClass(list, 'item').length).to.be(5);
+      expect(
+        TestUtils.scryRenderedDOMComponentsWithClass(list, "item").length
+      ).to.be(5);
       if (!window.callPhantom) {
-        expect(TestUtils.scryRenderedDOMComponentsWithClass(list, 'item')[4].getDOMNode().className)
-          .to.contain('example-enter');
-        expect(TestUtils.scryRenderedDOMComponentsWithClass(list, 'item')[4].getDOMNode().className)
-          .to.contain('example-enter-active');
+        expect(
+          TestUtils.scryRenderedDOMComponentsWithClass(
+            list,
+            "item"
+          )[4].getDOMNode().className
+        ).to.contain("example-enter");
+        expect(
+          TestUtils.scryRenderedDOMComponentsWithClass(
+            list,
+            "item"
+          )[4].getDOMNode().className
+        ).to.contain("example-enter-active");
       }
     }, 100);
     setTimeout(function () {
       if (!window.callPhantom) {
-        expect(TestUtils.scryRenderedDOMComponentsWithClass(list, 'item').length).to.be(5);
-        expect(TestUtils.scryRenderedDOMComponentsWithClass(list, 'item')[4].getDOMNode().className)
-          .not.to.contain('example-enter');
-        expect(TestUtils.scryRenderedDOMComponentsWithClass(list, 'item')[4].getDOMNode().className)
-          .not.to.contain('example-enter-active');
+        expect(
+          TestUtils.scryRenderedDOMComponentsWithClass(list, "item").length
+        ).to.be(5);
+        expect(
+          TestUtils.scryRenderedDOMComponentsWithClass(
+            list,
+            "item"
+          )[4].getDOMNode().className
+        ).not.to.contain("example-enter");
+        expect(
+          TestUtils.scryRenderedDOMComponentsWithClass(
+            list,
+            "item"
+          )[4].getDOMNode().className
+        ).not.to.contain("example-enter-active");
       }
       done();
     }, 1400);

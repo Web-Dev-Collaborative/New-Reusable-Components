@@ -1,3 +1,3 @@
-'use strict';
+"use strict";
 
-module.exports = require('./CSSTransitionGroup');
+module.exports = require("./CSSTransitionGroup");

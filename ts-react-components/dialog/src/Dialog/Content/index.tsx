@@ -14,12 +14,12 @@ export type ContentProps = {
   onVisibleChanged: (visible: boolean) => void;
   onMouseDown: React.MouseEventHandler;
   onMouseUp: React.MouseEventHandler;
-} & IDialogChildProps
+} & IDialogChildProps;
 
 export type ContentRef = {
   focus: () => void;
   changeActive: (next: boolean) => void;
-}
+};
 
 const Content = React.forwardRef<ContentRef, ContentProps>((props, ref) => {
   const {

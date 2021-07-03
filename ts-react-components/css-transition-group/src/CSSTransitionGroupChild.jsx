@@ -10,20 +10,20 @@
  * @providesModule ReactCSSTransitionGroupChild
  */
 
-'use strict';
+"use strict";
 
-var React = require('react');
+var React = require("react");
 
-var CSSCore = require('./CSSCore');
-var ReactTransitionEvents = require('./ReactTransitionEvents');
+var CSSCore = require("./CSSCore");
+var ReactTransitionEvents = require("./ReactTransitionEvents");
 
 var TICK = 17;
 
 var ReactCSSTransitionGroupChild = React.createClass({
   transition(animationType, finishCallback) {
     var node = this.getDOMNode();
-    var className = this.props.name + '-' + animationType;
-    var activeClassName = className + '-active';
+    var className = this.props.name + "-" + animationType;
+    var activeClassName = className + "-active";
 
     if (this.endListener) {
       this.endListener();
@@ -97,7 +97,7 @@ var ReactCSSTransitionGroupChild = React.createClass({
 
   componentWillEnter(done) {
     if (this.props.enter) {
-      this.transition('enter', done);
+      this.transition("enter", done);
     } else {
       done();
     }
@@ -105,7 +105,7 @@ var ReactCSSTransitionGroupChild = React.createClass({
 
   componentWillLeave(done) {
     if (this.props.leave) {
-      this.transition('leave', done);
+      this.transition("leave", done);
     } else {
       done();
     }
@@ -113,7 +113,7 @@ var ReactCSSTransitionGroupChild = React.createClass({
 
   render() {
     return this.props.children;
-  }
+  },
 });
 
 module.exports = ReactCSSTransitionGroupChild;

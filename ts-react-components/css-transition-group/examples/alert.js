@@ -1,6 +1,7 @@
-'use strict';
+"use strict";
 
-var style = '.alert-outer{\
+var style =
+  ".alert-outer{\
 position: fixed;\
 width:100%;\
 top: 50px;\
@@ -37,10 +38,10 @@ z-index: 9999;\
 \
 .alert-anim-leave.alert-anim-leave-active {\
   opacity: 0.01;\
-}';
+}";
 
-var React = require('react');
-var CSSTransitionGroup = require('rc-css-transition-group');
+var React = require("react");
+var CSSTransitionGroup = require("rc-css-transition-group");
 var seed = 0;
 
 var Alert = React.createClass({
@@ -48,16 +49,15 @@ var Alert = React.createClass({
     time: React.PropTypes.number,
     type: React.PropTypes.number,
     str: React.PropTypes.string,
-    onEnd: React.PropTypes.func
+    onEnd: React.PropTypes.func,
   },
 
   getDefaultProps: function () {
     return {
-      onEnd: function () {
-      },
+      onEnd: function () {},
       time: 2000,
-      type: 'success'
-    }
+      type: "success",
+    };
   },
 
   componentDidMount: function () {
@@ -70,19 +70,18 @@ var Alert = React.createClass({
   render: function () {
     var props = this.props;
     return <div className={"alert alert-" + props.type}>{props.str}</div>;
-  }
+  },
 });
-
 
 var AlertGroup = React.createClass({
   getInitialState: function () {
     return {
-      alerts: []
-    }
+      alerts: [],
+    };
   },
   addAlert: function (a) {
     this.setState({
-      alerts: this.state.alerts.concat(a)
+      alerts: this.state.alerts.concat(a),
     });
   },
   onEnd: function (key) {
@@ -97,13 +96,16 @@ var AlertGroup = React.createClass({
       }
     });
     if (target) {
-      this.setState({
-        alerts: ret
-      }, function () {
-        if (target.callback) {
-          target.callback();
+      this.setState(
+        {
+          alerts: ret,
+        },
+        function () {
+          if (target.callback) {
+            target.callback();
+          }
         }
-      })
+      );
     }
   },
   render: function () {
@@ -112,29 +114,33 @@ var AlertGroup = React.createClass({
     var children = alerts.map(function (a) {
       if (!a.key) {
         seed++;
-        a.key = seed + '';
+        a.key = seed + "";
       }
-      return <Alert {...a} onEnd={self.onEnd.bind(self, a.key)}/>
+      return <Alert {...a} onEnd={self.onEnd.bind(self, a.key)} />;
     });
-    return <div className="alert-outer">
-      <CSSTransitionGroup transitionName="alert-anim">{children}</CSSTransitionGroup>
-    </div>;
-  }
+    return (
+      <div className="alert-outer">
+        <CSSTransitionGroup transitionName="alert-anim">
+          {children}
+        </CSSTransitionGroup>
+      </div>
+    );
+  },
 });
 
 var alertGroup;
 
 function alert(str, time, type, callback) {
   if (!alertGroup) {
-    var div = document.createElement('div');
+    var div = document.createElement("div");
     document.body.appendChild(div);
-    alertGroup = React.render(<AlertGroup/>, div);
+    alertGroup = React.render(<AlertGroup />, div);
   }
   alertGroup.addAlert({
     str: str,
     time: time,
     type: type,
-    callback: callback
+    callback: callback,
   });
 }
 
@@ -148,9 +154,11 @@ function onClick() {
   }
 }
 
-React.render(<div>
+React.render(
+  <div>
     <h1>notification</h1>
     <style>{style}</style>
     <button onClick={onClick}>show notification</button>
   </div>,
-  document.getElementById('__react-content'));
+  document.getElementById("__react-content")
+);

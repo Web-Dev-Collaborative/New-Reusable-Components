@@ -9,7 +9,7 @@
  * @providesModule ReactTransitionEvents
  */
 
-'use strict';
+"use strict";
 /**
  * EVENT_NAME_MAP is used to determine which event fired when a
  * transition/animation ends, based on the style property used to
@@ -17,26 +17,26 @@
  */
 var EVENT_NAME_MAP = {
   transitionend: {
-    transition: 'transitionend',
-    WebkitTransition: 'webkitTransitionEnd',
-    MozTransition: 'mozTransitionEnd',
-    OTransition: 'oTransitionEnd',
-    msTransition: 'MSTransitionEnd'
+    transition: "transitionend",
+    WebkitTransition: "webkitTransitionEnd",
+    MozTransition: "mozTransitionEnd",
+    OTransition: "oTransitionEnd",
+    msTransition: "MSTransitionEnd",
   },
 
   animationend: {
-    animation: 'animationend',
-    WebkitAnimation: 'webkitAnimationEnd',
-    MozAnimation: 'mozAnimationEnd',
-    OAnimation: 'oAnimationEnd',
-    msAnimation: 'MSAnimationEnd'
-  }
+    animation: "animationend",
+    WebkitAnimation: "webkitAnimationEnd",
+    MozAnimation: "mozAnimationEnd",
+    OAnimation: "oAnimationEnd",
+    msAnimation: "MSAnimationEnd",
+  },
 };
 
 var endEvents = [];
 
 function detectEvents() {
-  var testEl = document.createElement('div');
+  var testEl = document.createElement("div");
   var style = testEl.style;
 
   // On some platforms, in particular some releases of Android 4.x,
@@ -44,11 +44,11 @@ function detectEvents() {
   // style object but the events that fire will still be prefixed, so we need
   // to check if the un-prefixed events are useable, and if not remove them
   // from the map
-  if (!('AnimationEvent' in window)) {
+  if (!("AnimationEvent" in window)) {
     delete EVENT_NAME_MAP.animationend.animation;
   }
 
-  if (!('TransitionEvent' in window)) {
+  if (!("TransitionEvent" in window)) {
     delete EVENT_NAME_MAP.transitionend.transition;
   }
 
@@ -63,7 +63,7 @@ function detectEvents() {
   }
 }
 
-if (typeof window !== 'undefined') {
+if (typeof window !== "undefined") {
   detectEvents();
 }
 
@@ -102,7 +102,7 @@ var ReactTransitionEvents = {
     endEvents.forEach(function (endEvent) {
       removeEventListener(node, endEvent, eventListener);
     });
-  }
+  },
 };
 
 module.exports = ReactTransitionEvents;

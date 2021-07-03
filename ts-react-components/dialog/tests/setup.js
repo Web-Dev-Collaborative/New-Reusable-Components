@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-global.requestAnimationFrame = cb => setTimeout(cb, 0);
+global.requestAnimationFrame = (cb) => setTimeout(cb, 0);
 
 const originError = console.error;
 const ignoreList = [
@@ -7,7 +7,7 @@ const ignoreList = [
   'Warning: unmountComponentAtNode():',
 ];
 console.error = (...args) => {
-  if (ignoreList.some(str => args[0].includes(str))) {
+  if (ignoreList.some((str) => args[0].includes(str))) {
     return;
   }
 

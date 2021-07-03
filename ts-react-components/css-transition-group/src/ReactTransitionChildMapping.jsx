@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 function inChildren(children, child) {
   var found = 0;
@@ -20,7 +20,7 @@ module.exports = {
       if (found) {
         return;
       }
-      found = (c.key === child.key && c.props[showProp]);
+      found = c.key === child.key && c.props[showProp];
     });
     return found;
   },
@@ -75,5 +75,5 @@ module.exports = {
     ret = ret.concat(pendingChildren);
 
     return ret;
-  }
+  },
 };

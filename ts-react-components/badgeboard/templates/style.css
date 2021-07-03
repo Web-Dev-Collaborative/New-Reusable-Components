@@ -78,7 +78,8 @@ a.navbar-brand {
   color: #333;
 }
 
-a.navbar-brand:hover, a.navbar-brand:focus {
+a.navbar-brand:hover,
+a.navbar-brand:focus {
   color: #2a6496;
 }
 

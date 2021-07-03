@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-var SPACE = ' ';
+var SPACE = " ";
 var RE_CLASS = /[\n\t\r]/g;
 
 var norm = function (elemClass) {
@@ -9,7 +9,7 @@ var norm = function (elemClass) {
 
 module.exports = {
   addClass(elem, className) {
-    elem.className += ' ' + className;
+    elem.className += " " + className;
   },
 
   removeClass(elem, needle) {
@@ -22,5 +22,5 @@ module.exports = {
       className = className.replace(needle, SPACE);
     }
     elem.className = className.trim();
-  }
+  },
 };

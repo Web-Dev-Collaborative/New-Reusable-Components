@@ -1,3 +1,3 @@
-'use strict';
+"use strict";
 
-require('./CascadeSelect.spec');
+require("./CascadeSelect.spec");

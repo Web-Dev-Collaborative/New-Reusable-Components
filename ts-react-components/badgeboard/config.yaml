@@ -13,227 +13,227 @@ keywords: react-component, antd, ant design, react ui
 # list of projects, this will be sorted by name;
 # every package is either string or object
 projects:
- - rc-align:
-     repo: react-component/align
- - rc-animate:
-     repo: react-component/animate
- - rc-color-picker:
-     repo: react-component/color-picker
- - rc-cropping:
-     repo: react-component/cropping
- - rc-calendar:
-     repo: react-component/calendar
- - rc-checkbox:
-     repo: react-component/checkbox
- - rc-cascader:
-     repo: react-component/cascader
- - rc-collapse:
-     repo: react-component/collapse
- - rc-drawer:
-     repo: react-component/drawer
- - rc-dialog:
-     repo: react-component/dialog
- - rc-dropdown:
-     repo: react-component/dropdown
- - rc-footer:
-     repo: react-component/footer
- - rc-input-number:
-     repo: react-component/input-number
- - rc-mentions:
-     repo: react-component/mentions
- - rc-menu:
-     repo: react-component/menu
- - rc-notification:
-     repo: react-component/notification
- - rc-picker:
-     repo: react-component/picker
- - rc-pagination:
-     repo: react-component/pagination
- - rc-progress:
-     repo: react-component/progress
- - rc-resize-observer:
-     repo: react-component/resize-observer
- - rc-select:
-     repo: react-component/select
- - rc-slider:
-     repo: react-component/slider
- - rc-steps:
-     repo: react-component/steps
- - rc-switch:
-     repo: react-component/switch
- - rc-table:
-     repo: react-component/table
- - rc-tabs:
-     repo: react-component/tabs
- - rc-tooltip:
-     repo: react-component/tooltip
- - rc-tree:
-     repo: react-component/tree
- - rc-upload:
-     repo: react-component/upload
- - rc-trigger:
-     repo: react-component/trigger
- - rc-time-picker:
-     repo: react-component/time-picker
- - rc-field-form:
-     repo: react-component/field-form
- - rc-form:
-     repo: react-component/form
- - rc-tree-select:
-     repo: react-component/tree-select
- - rc-util:
-     repo: react-component/util
- - rc-banner-anim:
-     repo: react-component/banner-anim
- - rc-tween-one:
-     repo: react-component/tween-one
- - rc-texty:
-     repo: react-component/texty
- - rc-virtual-list:
-     repo: react-component/virtual-list
- - rc-touchable:
-     repo: react-component/touchable
- - rc-swipeout:
-     repo: react-component/swipeout
- - rc-gesture:
-     repo: react-component/gesture
- - rmc-pull-to-refresh:
-     repo: react-component/m-pull-to-refresh
- - rmc-picker:
-     repo: react-component/m-picker
- - rmc-date-picker:
-     repo: react-component/m-date-picker
- - rmc-dialog:
-     repo: react-component/m-dialog
- - rmc-input-number:
-     repo: react-component/m-input-number
- - rmc-pull-to-refresh:
-     repo: react-component/m-pull-to-refresh
- - rmc-list-view:
-     repo: react-component/m-list-view
- - rmc-calendar:
-     repo: react-component/m-calendar
- - rmc-drawer:
-     repo: react-component/m-drawer
- - rmc-tabs:
-     repo: react-component/m-tabs
- - dom-align:
-     repo: yiminghe/dom-align
- - async-validator:
-     repo: yiminghe/async-validator
- - rc-image:
-     repo: react-component/image
+  - rc-align:
+      repo: react-component/align
+  - rc-animate:
+      repo: react-component/animate
+  - rc-color-picker:
+      repo: react-component/color-picker
+  - rc-cropping:
+      repo: react-component/cropping
+  - rc-calendar:
+      repo: react-component/calendar
+  - rc-checkbox:
+      repo: react-component/checkbox
+  - rc-cascader:
+      repo: react-component/cascader
+  - rc-collapse:
+      repo: react-component/collapse
+  - rc-drawer:
+      repo: react-component/drawer
+  - rc-dialog:
+      repo: react-component/dialog
+  - rc-dropdown:
+      repo: react-component/dropdown
+  - rc-footer:
+      repo: react-component/footer
+  - rc-input-number:
+      repo: react-component/input-number
+  - rc-mentions:
+      repo: react-component/mentions
+  - rc-menu:
+      repo: react-component/menu
+  - rc-notification:
+      repo: react-component/notification
+  - rc-picker:
+      repo: react-component/picker
+  - rc-pagination:
+      repo: react-component/pagination
+  - rc-progress:
+      repo: react-component/progress
+  - rc-resize-observer:
+      repo: react-component/resize-observer
+  - rc-select:
+      repo: react-component/select
+  - rc-slider:
+      repo: react-component/slider
+  - rc-steps:
+      repo: react-component/steps
+  - rc-switch:
+      repo: react-component/switch
+  - rc-table:
+      repo: react-component/table
+  - rc-tabs:
+      repo: react-component/tabs
+  - rc-tooltip:
+      repo: react-component/tooltip
+  - rc-tree:
+      repo: react-component/tree
+  - rc-upload:
+      repo: react-component/upload
+  - rc-trigger:
+      repo: react-component/trigger
+  - rc-time-picker:
+      repo: react-component/time-picker
+  - rc-field-form:
+      repo: react-component/field-form
+  - rc-form:
+      repo: react-component/form
+  - rc-tree-select:
+      repo: react-component/tree-select
+  - rc-util:
+      repo: react-component/util
+  - rc-banner-anim:
+      repo: react-component/banner-anim
+  - rc-tween-one:
+      repo: react-component/tween-one
+  - rc-texty:
+      repo: react-component/texty
+  - rc-virtual-list:
+      repo: react-component/virtual-list
+  - rc-touchable:
+      repo: react-component/touchable
+  - rc-swipeout:
+      repo: react-component/swipeout
+  - rc-gesture:
+      repo: react-component/gesture
+  - rmc-pull-to-refresh:
+      repo: react-component/m-pull-to-refresh
+  - rmc-picker:
+      repo: react-component/m-picker
+  - rmc-date-picker:
+      repo: react-component/m-date-picker
+  - rmc-dialog:
+      repo: react-component/m-dialog
+  - rmc-input-number:
+      repo: react-component/m-input-number
+  - rmc-pull-to-refresh:
+      repo: react-component/m-pull-to-refresh
+  - rmc-list-view:
+      repo: react-component/m-list-view
+  - rmc-calendar:
+      repo: react-component/m-calendar
+  - rmc-drawer:
+      repo: react-component/m-drawer
+  - rmc-tabs:
+      repo: react-component/m-tabs
+  - dom-align:
+      repo: yiminghe/dom-align
+  - async-validator:
+      repo: yiminghe/async-validator
+  - rc-image:
+      repo: react-component/image
 
 # list of maintainers, this won't be sorted
 maintainers:
- - name:    YiMing He
-   github:  yiminghe
-   npm:     yiminghe
-   twitter: yiminghe
-   email:   yiminghe@gmail.com
- - name:    afc163
-   github:  afc163
-   npm:     afc163
-   twitter: afc163
-   email:   afc163@gmail.com
- - name:    yesmeck
-   github:  yesmeck
-   npm:     yesmeck
-   twitter: yesmeck
-   email:   yesmeck@gmail.com
- - name:    benjycui
-   github:  benjycui
-   npm:     benjycui
-   twitter: benjycui
-   email:   benjycui@gmail.com
- - name:    zombiej
-   github:  zombiej
-   npm:     zombiej
-   twitter: zombiej
-   email:   zombiej@gmail.com
- - name:    yutingzhao1991
-   github:  yutingzhao1991
-   npm:     yutingzhao1991
-   twitter: yutingzhao1991
-   email:   yutingzhao1991@gmail.com
- - name:    XiaoQing Dong
-   github:  dxq613
-   npm:     dxq613
-   twitter: dxq613
-   email:   dxq613@gmail.com
- - name:    Eward Song
-   github:  shepherdwind
-   npm:     shepherdwind
-   twitter: shepherdwind
-   email:   eward.song@gmail.com
- - name:    warmhug
-   github:  warmhug
-   npm:     warmhug
-   twitter: warmhug
-   email:   hualei5280@gmail.com
- - name:    shuaiji.tsj
-   github:  tsj1107
-   npm:     tsj1107
-   twitter: tsj1107
-   email:   tsjxyz@gmail.com
- - name:    ibigbug
-   github:  ibigbug
-   npm:     ibigbug
-   twitter: ibigbug
-   email:   xiaobayuwei@gmail.com
- - name:    simaq
-   github:  simaq
-   npm:     simaq
-   twitter: simaq
-   email:   sima.zhang1990@gmail.com
- - name:    yuhangge
-   github:  yuhangge
-   npm:     yuhangge
-   twitter: yuhangge
-   email:   abeyuhang@gmail.com
- - name:    sliuqin
-   github:  sliuqin
-   npm:     sliuqin
-   twitter: sliuqin
-   email:   sliuqin@gmail.com
- - name:    jljsj33
-   github:  jljsj33
-   npm:     jljsj33
-   twitter: jljsj33
-   email:   155259966@qq.com
- - name:    noyobo
-   github:  noyobo
-   npm:     noyobo
-   twitter: noyobo
-   email:   noyobo@gmail.com
- - name:    ddcat1115
-   github:  ddcat1115
-   npm:     ddcat1115
-   twitter: ddcat1115
-   email:   ddcat1115@gmail.com
- - name:    paranoidjk
-   github:  paranoidjk
-   npm:     paranoidjk
-   twitter: paranoidjk
-   email:   paranoidjk@gmail.com
- - name:    nikogu
-   github:  nikogu
-   npm:     nikogu
-   twitter: nikogu
-   email:   nikogu@gmail.com
- - name:    RaoHai
-   github:  raohai
-   npm:     raohai
-   twitter: raohai
-   email:   surgesoft@gmail.com
+  - name: YiMing He
+    github: yiminghe
+    npm: yiminghe
+    twitter: yiminghe
+    email: yiminghe@gmail.com
+  - name: afc163
+    github: afc163
+    npm: afc163
+    twitter: afc163
+    email: afc163@gmail.com
+  - name: yesmeck
+    github: yesmeck
+    npm: yesmeck
+    twitter: yesmeck
+    email: yesmeck@gmail.com
+  - name: benjycui
+    github: benjycui
+    npm: benjycui
+    twitter: benjycui
+    email: benjycui@gmail.com
+  - name: zombiej
+    github: zombiej
+    npm: zombiej
+    twitter: zombiej
+    email: zombiej@gmail.com
+  - name: yutingzhao1991
+    github: yutingzhao1991
+    npm: yutingzhao1991
+    twitter: yutingzhao1991
+    email: yutingzhao1991@gmail.com
+  - name: XiaoQing Dong
+    github: dxq613
+    npm: dxq613
+    twitter: dxq613
+    email: dxq613@gmail.com
+  - name: Eward Song
+    github: shepherdwind
+    npm: shepherdwind
+    twitter: shepherdwind
+    email: eward.song@gmail.com
+  - name: warmhug
+    github: warmhug
+    npm: warmhug
+    twitter: warmhug
+    email: hualei5280@gmail.com
+  - name: shuaiji.tsj
+    github: tsj1107
+    npm: tsj1107
+    twitter: tsj1107
+    email: tsjxyz@gmail.com
+  - name: ibigbug
+    github: ibigbug
+    npm: ibigbug
+    twitter: ibigbug
+    email: xiaobayuwei@gmail.com
+  - name: simaq
+    github: simaq
+    npm: simaq
+    twitter: simaq
+    email: sima.zhang1990@gmail.com
+  - name: yuhangge
+    github: yuhangge
+    npm: yuhangge
+    twitter: yuhangge
+    email: abeyuhang@gmail.com
+  - name: sliuqin
+    github: sliuqin
+    npm: sliuqin
+    twitter: sliuqin
+    email: sliuqin@gmail.com
+  - name: jljsj33
+    github: jljsj33
+    npm: jljsj33
+    twitter: jljsj33
+    email: 155259966@qq.com
+  - name: noyobo
+    github: noyobo
+    npm: noyobo
+    twitter: noyobo
+    email: noyobo@gmail.com
+  - name: ddcat1115
+    github: ddcat1115
+    npm: ddcat1115
+    twitter: ddcat1115
+    email: ddcat1115@gmail.com
+  - name: paranoidjk
+    github: paranoidjk
+    npm: paranoidjk
+    twitter: paranoidjk
+    email: paranoidjk@gmail.com
+  - name: nikogu
+    github: nikogu
+    npm: nikogu
+    twitter: nikogu
+    email: nikogu@gmail.com
+  - name: RaoHai
+    github: raohai
+    npm: raohai
+    twitter: raohai
+    email: surgesoft@gmail.com
 
 # this determines what info will be fetched with `make db`;
 # you can comment out stuff to reduce number of http requests
 db.json:
   projects:
-   - node        # node version, it's the lowest version from .travis.yml
-   - description # package description from package.json (from npm registry)
-   - maintainer  # maintainer npm account (= _npmUser of last published ver)
+    - node # node version, it's the lowest version from .travis.yml
+    - description # package description from package.json (from npm registry)
+    - maintainer # maintainer npm account (= _npmUser of last published ver)
   maintainers:
-   - packages    # amount of packages this npm user has
-   - avatar
+    - packages # amount of packages this npm user has
+    - avatar

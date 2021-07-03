@@ -11,11 +11,11 @@ const Demo = () => {
   const [showDrawer, setShowDrawer] = useState(false);
 
   const onToggleDrawer = () => {
-    setShowDrawer(value => !value);
+    setShowDrawer((value) => !value);
   };
 
   const onToggleDialog = () => {
-    setShowDialog(value => !value);
+    setShowDialog((value) => !value);
   };
 
   const dialog = (
@@ -27,23 +27,26 @@ const Demo = () => {
       forceRender
     >
       <p>basic modal</p>
-      <p><button type="button" onClick={onToggleDrawer}>show drawer</button></p>
+      <p>
+        <button type="button" onClick={onToggleDrawer}>
+          show drawer
+        </button>
+      </p>
       <div style={{ height: 200 }} />
     </Dialog>
   );
   const drawer = (
-    <Drawer
-      open={showDrawer}
-      handler={false}
-      onClose={onToggleDrawer}
-      level={null}
-    >
-      <button type="button" onClick={onToggleDrawer}>close drawer</button>
+    <Drawer open={showDrawer} handler={false} onClose={onToggleDrawer} level={null}>
+      <button type="button" onClick={onToggleDrawer}>
+        close drawer
+      </button>
     </Drawer>
   );
   return (
     <div>
-      <button type="button" onClick={onToggleDialog}>open dialog</button>
+      <button type="button" onClick={onToggleDialog}>
+        open dialog
+      </button>
       {dialog}
       {drawer}
     </div>

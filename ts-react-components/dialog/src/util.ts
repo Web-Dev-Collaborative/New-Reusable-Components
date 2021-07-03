@@ -30,7 +30,7 @@ function getScroll(w: Window, top?: boolean): number {
 
 type CompatibleDocument = {
   parentWindow?: Window;
-} & Document
+} & Document;
 
 export function offset(el: Element) {
   const rect = el.getBoundingClientRect();

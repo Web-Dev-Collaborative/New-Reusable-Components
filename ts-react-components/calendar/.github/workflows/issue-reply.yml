@@ -12,7 +12,7 @@ jobs:
         if: github.event.label.name == 'help wanted' || github.event.label.name == 'PR welcome'
         uses: actions-cool/issues-helper@v1.11
         with:
-          actions: 'create-comment'
+          actions: "create-comment"
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.issue.number }}
           body: |
@@ -22,7 +22,7 @@ jobs:
         if: github.event.label.name == 'need reproduce'
         uses: actions-cool/issues-helper@v1.11
         with:
-          actions: 'create-comment'
+          actions: "create-comment"
           issue-number: ${{ github.event.issue.number }}
           body: |
             Hello @${{ github.event.issue.user.login }}. Please provide a online reproduction by forking this link https://codesandbox.io or a minimal GitHub repository.

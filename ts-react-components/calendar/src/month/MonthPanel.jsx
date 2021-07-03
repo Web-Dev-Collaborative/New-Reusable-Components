@@ -1,15 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { polyfill } from 'react-lifecycles-compat';
-import MonthTable from './MonthTable';
+import React from "react";
+import PropTypes from "prop-types";
+import { polyfill } from "react-lifecycles-compat";
+import MonthTable from "./MonthTable";
 
 function goYear(direction) {
   this.props.changeYear(direction);
 }
 
-function noop() {
-
-}
+function noop() {}
 
 class MonthPanel extends React.Component {
   static propTypes = {
@@ -20,12 +18,12 @@ class MonthPanel extends React.Component {
     rootPrefixCls: PropTypes.string,
     value: PropTypes.object,
     defaultValue: PropTypes.object,
-  }
+  };
 
   static defaultProps = {
     onChange: noop,
     onSelect: noop,
-  }
+  };
 
   constructor(props) {
     super(props);
@@ -42,7 +40,7 @@ class MonthPanel extends React.Component {
   static getDerivedStateFromProps(props) {
     let newState = {};
 
-    if ('value' in props) {
+    if ("value" in props) {
       newState = {
         value: props.value,
       };
@@ -51,19 +49,18 @@ class MonthPanel extends React.Component {
     return newState;
   }
 
-
   setAndSelectValue = (value) => {
     this.setValue(value);
     this.props.onSelect(value);
-  }
+  };
 
   setValue = (value) => {
-    if ('value' in this.props) {
+    if ("value" in this.props) {
       this.setState({
         value,
       });
     }
-  }
+  };
 
   render() {
     const props = this.props;
@@ -72,7 +69,7 @@ class MonthPanel extends React.Component {
     const year = value.year();
     const prefixCls = this.prefixCls;
 
-    const footer = renderFooter && renderFooter('month');
+    const footer = renderFooter && renderFooter("month");
 
     return (
       <div className={prefixCls} style={props.style}>
@@ -113,12 +110,10 @@ class MonthPanel extends React.Component {
               prefixCls={prefixCls}
             />
           </div>
-          {footer && (
-            <div className={`${prefixCls}-footer`}>
-              {footer}
-            </div>)}
+          {footer && <div className={`${prefixCls}-footer`}>{footer}</div>}
         </div>
-      </div>);
+      </div>
+    );
   }
 }
 

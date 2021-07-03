@@ -1,2 +1,2 @@
-require('./assets/index.css');
-module.exports = require('./lib/Dropzone');
+require("./assets/index.css");
+module.exports = require("./lib/Dropzone");

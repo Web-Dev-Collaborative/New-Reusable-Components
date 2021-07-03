@@ -1,26 +1,26 @@
 // mock request
-var assign = require('object-assign');
-var EventEmitter = require('events').EventEmitter;
+var assign = require("object-assign");
+var EventEmitter = require("events").EventEmitter;
 var request = assign({}, EventEmitter.prototype, {
-  init: function() {
+  init: function () {
     this.attachs = {};
     this.fields = {};
   },
-  attach: function(key, val) {
+  attach: function (key, val) {
     this.attachs[key] = val;
     return this;
   },
-  field: function(key, val) {
+  field: function (key, val) {
     this.fields[key] = val;
     return this;
-  }
+  },
 });
 var percent = 0;
-exports.post = function(ret) {
+exports.post = function (ret) {
   percent = 0;
   request.init();
-  return function() {
-    request.end = function(callback) {
+  return function () {
+    request.end = function (callback) {
       progress(callback, null, ret);
     };
 
@@ -31,9 +31,9 @@ exports.post = function(ret) {
 exports.request = request;
 
 function progress(callback, err, ret) {
-  setTimeout(function() {
+  setTimeout(function () {
     percent += 20;
-    request.emit('progress', {percent: percent});
+    request.emit("progress", { percent: percent });
     if (percent <= 100) {
       progress(callback, err, ret);
     } else {

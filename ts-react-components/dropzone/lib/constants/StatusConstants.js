@@ -1,6 +1,6 @@
-var keymirror = require('keymirror');
+var keymirror = require("keymirror");
 module.exports = keymirror({
   ADD: null,
   REJECTED: null,
-  UPLOADING: null
+  UPLOADING: null,
 });

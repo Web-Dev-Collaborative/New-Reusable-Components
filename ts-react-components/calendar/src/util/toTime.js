@@ -1,9 +1,9 @@
 export function goStartMonth(time) {
-  return time.clone().startOf('month');
+  return time.clone().startOf("month");
 }
 
 export function goEndMonth(time) {
-  return time.clone().endOf('month');
+  return time.clone().endOf("month");
 }
 
 export function goTime(time, direction, unit) {
@@ -11,5 +11,5 @@ export function goTime(time, direction, unit) {
 }
 
 export function includesTime(timeList = [], time, unit) {
-  return timeList.some(t => t.isSame(time, unit));
+  return timeList.some((t) => t.isSame(time, unit));
 }

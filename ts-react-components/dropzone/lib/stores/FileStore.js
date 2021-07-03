@@ -6,40 +6,38 @@
  * Authors:
  *   翰文 <hanwen.sah@taobao.com> (http://shepherdwind.com)
  */
-'use strict';
+"use strict";
 
-var DzDispatcher = require('../dispatcher/DzDispatcher');
-var DzConstants = require('../constants/DzConstants');
-var StatusConstants = require('../constants/StatusConstants');
-var EventEmitter = require('events').EventEmitter;
-var assign = require('object-assign');
-var uid = require('../utils/uid');
+var DzDispatcher = require("../dispatcher/DzDispatcher");
+var DzConstants = require("../constants/DzConstants");
+var StatusConstants = require("../constants/StatusConstants");
+var EventEmitter = require("events").EventEmitter;
+var assign = require("object-assign");
+var uid = require("../utils/uid");
 
-var CHANGE_EVENT = 'change';
+var CHANGE_EVENT = "change";
 var _files = {};
 
 var FileStore = assign({}, EventEmitter.prototype, {
-
-  getAllFilesByUid: function(uid) {
+  getAllFilesByUid: function (uid) {
     return _files[uid] || {};
   },
 
-  addChangeListener: function(dropzoneId, callback) {
+  addChangeListener: function (dropzoneId, callback) {
     this.on(CHANGE_EVENT + dropzoneId, callback);
   },
 
-  removeChangeListener: function(dropzoneId, callback) {
+  removeChangeListener: function (dropzoneId, callback) {
     this.removeListener(CHANGE_EVENT + dropzoneId, callback);
   },
 
-  removeAll: function(uid) {
+  removeAll: function (uid) {
     delete _files[uid];
   },
 
-  emitChange: function(payload) {
+  emitChange: function (payload) {
     this.emit(CHANGE_EVENT + payload.dropzoneId, payload);
-  }
-
+  },
 });
 
 function add(file, dropzoneId) {
@@ -77,7 +75,7 @@ function remove(uid, dropzoneId) {
   delete _files[dropzoneId][uid];
 }
 
-DzDispatcher.register(function(action) {
+DzDispatcher.register(function (action) {
   switch (action.actionType) {
     case DzConstants.FILE_ADD:
       add(action.file, action.dropzoneId);

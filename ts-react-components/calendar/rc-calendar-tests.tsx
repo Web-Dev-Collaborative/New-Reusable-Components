@@ -1,6 +1,6 @@
-import * as React from 'react';
-import * as moment from 'moment';
-import Calendar from './';
+import * as React from "react";
+import * as moment from "moment";
+import Calendar from "./";
 
 const action = (date: moment.Moment) => {
   date.subtract(1);

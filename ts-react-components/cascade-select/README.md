@@ -1,4 +1,5 @@
 # rc-cascade-select
+
 ---
 
 cascade-select ui component for react.
@@ -29,12 +30,11 @@ cascade-select ui component for react.
 
 ## Feature
 
-* support ie8,ie8+,chrome,firefox,safari
+- support ie8,ie8+,chrome,firefox,safari
 
 ## install
 
 [![rc-cascade-select](https://nodei.co/npm/rc-cascade-select.png)](https://npmjs.org/package/rc-cascade-select)
-
 
 ## Development
 
@@ -48,7 +48,6 @@ npm start
 http://localhost:8000/examples/
 
 online example: http://react-component.github.io/cascade-select/build/examples/
-
 
 ## Api
 
